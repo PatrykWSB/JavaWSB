@@ -1,10 +1,13 @@
+import devices.Car;
+import devices.Phone;
+
 import java.util.Date;
 
 public class Human {
     public String firstName;
     public String lastName;
     public Animal pet;
-    public Phone phone;
+    public Phone tel;
     private Car auto;
 
     private Double salary = 200.0;
@@ -38,5 +41,9 @@ public class Human {
             this.auto = newauto;
             System.out.println("You need a credit but you can have it");
         } else System.out.println("Dude go to school, get a raise or change job idk");
+    }
+
+    public String toString() {
+        return firstName + " " + lastName + " " + pet + " " + auto + " " + tel;
     }
 }
