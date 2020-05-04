@@ -16,6 +16,12 @@ public class Main {
         man.pet = dog;
         man.auto = fourWheel;
         System.out.println(man.auto.model);
+
+        man.getSalary();
+        man.setSalary(300.0);
+        man.getSalary();
+        man.getSalary();
+
     }
 
 }
