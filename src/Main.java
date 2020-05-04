@@ -9,19 +9,22 @@ public class Main {
         dog.takeForAWalk();
 
         Car fourWheel = new Car("VW", "Golf");
+        fourWheel.value = 200.0;
 
         Human man = new Human();
         man.firstName = "Pan";
         man.lastName = "Panicz";
         man.pet = dog;
-        man.auto = fourWheel;
-        System.out.println(man.auto.model);
 
+        man.setAuto(fourWheel);
+
+
+        /*
         man.getSalary();
         man.setSalary(300.0);
         man.getSalary();
         man.getSalary();
-
+        */
     }
 
 }
