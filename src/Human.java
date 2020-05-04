@@ -1,6 +1,7 @@
 public class Human {
     public String firstName;
     public String lastName;
-    Animal pet;
-    Phone phone;
+    public Animal pet;
+    public Phone phone;
+    public Car auto;
 }
