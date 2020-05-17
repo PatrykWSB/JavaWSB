@@ -3,16 +3,21 @@ import devices.Phone;
 
 import java.util.Date;
 
-public class Human {
+public class Human extends Animal {
     public String firstName;
     public String lastName;
     public Animal pet;
     public Phone tel;
+    public Double cash;
     private Car auto;
 
     private Double salary = 200.0;
     private Date checkDate = new Date();
     private Double checkSalary = 200.0;
+
+    public Human(String species) {
+        super(species);
+    }
 
     public Double getSalary() {
         System.out.println("Last time your salary was " + checkSalary + " actual for date: " + checkDate);

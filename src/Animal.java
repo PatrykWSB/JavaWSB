@@ -1,6 +1,6 @@
 import java.io.File;
 
-public class Animal {
+public class Animal implements Saleable {
     public String name;
     final public String species;
     private Double weight;
@@ -41,8 +41,26 @@ public class Animal {
         }
     }
 
+
     public String toString() {
         return name + " " + species + " " + weight;
+    }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) throws Exception {
+        if (this instanceof Human) throw new Exception("nunu nie wolno");
+
+        if (seller.pet == null) System.out.println("nie mam żadnego zwierzaka daj mi spokój");
+        else {
+            if (buyer.cash < price) System.out.println("sory nie stać Cie");
+            else {
+                buyer.cash = -price;
+                seller.cash = +price;
+                buyer.pet = this;
+                seller.pet = null;
+                System.out.println("Pan/i " + buyer.firstName + " kupił od Pana/i " + seller.firstName + " " + buyer.pet.name + " za kwotę " + price);
+            }
+        }
     }
 }
 
