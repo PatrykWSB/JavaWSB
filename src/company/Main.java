@@ -2,7 +2,7 @@ package company;
 
 import company.creatures.Human;
 import company.creatures.Pet;
-import company.devices.Car;
+import company.devices.Diesel;
 import company.devices.Phone;
 
 public class Main {
@@ -14,7 +14,7 @@ public class Main {
         dog.feed(5.0);
         dog.takeForAWalk();
 
-        Car fourWheel = new Car("VW", "Golf", 2006);
+        Diesel fourWheel = new Diesel("VW", "Golf", 2006);
         fourWheel.value = 200.0;
 
         Phone myPhone = new Phone("Xiaomi", "Redmi Note 4", 2016, 5.5, true);
@@ -47,8 +47,11 @@ public class Main {
 
         man.setAuto(fourWheel);
 
-        Car fiveWheel = new Car("VW", "Golf", 2006);
+        Diesel fiveWheel = new Diesel("VW", "Golf", 2006);
         fiveWheel.value = 200.0;
+
+        myPhone.installApp("headbook", "1.2.30");
+        myPhone.installApp("headbook", "1.23.41", "appStore.com/headbook");
         /*
         System.out.println(fourWheel.equals(fiveWheel));
         System.out.println(fourWheel);

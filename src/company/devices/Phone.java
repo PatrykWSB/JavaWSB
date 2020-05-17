@@ -2,6 +2,8 @@ package company.devices;
 
 import company.creatures.Human;
 
+import java.net.URL;
+
 public class Phone extends Device {
     final public Double screenSize;
     final public Boolean android;
@@ -34,4 +36,31 @@ public class Phone extends Device {
             }
         }
     }
+
+    static final String DEFAULT_SERVER_ADRESS = "play.google.com";
+    static final String DEFAULT_VERSION = "1.11.02";
+    static final String DEFAULT_PROTOCOL = "https";
+
+    public void installApp(String appName) {
+        System.out.println("You installed " + appName);
+    }
+
+    public void installApp(String appName, String version) {
+        System.out.println("You installed " + appName + " in version " + version);
+    }
+
+    public void installApp(String appName, String version, String serverAdress) {
+        System.out.println("You installed " + appName + " in version " + version + " " + " from " + serverAdress);
+    }
+
+    public void installApp(String[] appNames) {
+        for (String appName : appNames) {
+            installApp(appName);
+        }
+    }
+
+    public void installApp(URL appURL) {
+        System.out.println("You installed " + appURL);
+    }
+
 }

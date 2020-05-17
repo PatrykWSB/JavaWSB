@@ -2,7 +2,7 @@ package company.devices;
 
 import company.creatures.Human;
 
-public class Car extends Device {
+public abstract class Car extends Device {
 
     public Double value;
 
@@ -32,4 +32,6 @@ public class Car extends Device {
             }
         }
     }
+
+    public abstract void refuel();
 }
