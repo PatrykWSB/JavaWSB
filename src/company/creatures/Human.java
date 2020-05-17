@@ -1,5 +1,7 @@
-import devices.Car;
-import devices.Phone;
+package company.creatures;
+
+import company.devices.Car;
+import company.devices.Phone;
 
 import java.util.Date;
 

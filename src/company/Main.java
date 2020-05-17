@@ -1,5 +1,9 @@
-import devices.Car;
-import devices.Phone;
+package company;
+
+import company.creatures.Animal;
+import company.creatures.Human;
+import company.devices.Car;
+import company.devices.Phone;
 
 public class Main {
     public static void main(String[] args) {

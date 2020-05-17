@@ -1,3 +1,7 @@
+package company.creatures;
+
+import company.Saleable;
+
 import java.io.File;
 
 public class Animal implements Saleable {
