@@ -4,7 +4,7 @@ import company.Saleable;
 
 import java.io.File;
 
-public class Animal implements Saleable {
+public abstract class Animal implements Saleable, Feedable {
     public String name;
     final public String species;
     private Double weight;
@@ -29,7 +29,8 @@ public class Animal implements Saleable {
         }
     }
 
-    void feed() {
+    @Override
+    public void feed() {
         if (weight <= 0) System.out.println("sorry your pet is dead");
         else {
             weight += 1;
@@ -37,7 +38,16 @@ public class Animal implements Saleable {
         }
     }
 
-    void takeForAWalk() {
+    @Override
+    public void feed(Double foodWeight) {
+        if (weight <= 0) System.out.println("sorry your pet is dead");
+        else {
+            weight += foodWeight;
+            System.out.println("omomom");
+        }
+    }
+
+    public void takeForAWalk() {
         if (weight <= 0) System.out.println("sorry your pet is dead");
         else {
             weight -= 1;

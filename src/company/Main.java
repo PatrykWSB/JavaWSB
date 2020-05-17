@@ -1,18 +1,19 @@
 package company;
 
-import company.creatures.Animal;
 import company.creatures.Human;
+import company.creatures.Pet;
 import company.devices.Car;
 import company.devices.Phone;
 
 public class Main {
     public static void main(String[] args) {
-        Animal dog = new Animal("dog");
+        Pet dog = new Pet("dog");
         dog.name = "Pieseł";
-        /*
+
         dog.feed();
+        dog.feed(5.0);
         dog.takeForAWalk();
-        */
+
         Car fourWheel = new Car("VW", "Golf", 2006);
         fourWheel.value = 200.0;
 
