@@ -11,14 +11,23 @@ public class Human extends Animal {
     public Animal pet;
     public Phone tel;
     public Double cash;
-    private Car auto;
+    private Car[] garage;
 
     private Double salary = 200.0;
     private Date checkDate = new Date();
     private Double checkSalary = 200.0;
 
-    public Human(String species) {
+    public Human(String species, Integer garageSize) {
         super(species);
+        this.garage = new Car[garageSize];
+    }
+
+    public Double getGarageValue(Integer garageSize) {
+        Double value = 0.0;
+        for (int i = 0; i < garageSize; i++) {
+            value += this.garage[i].value;
+        }
+        return value;
     }
 
     public Double getSalary() {
@@ -36,21 +45,21 @@ public class Human extends Animal {
         }
     }
 
-    public Car getAuto() {
-        return auto;
+    public Car getAuto(Integer index) {
+        return garage[index];
     }
 
-    public void setAuto(Car newauto) {
+    public void setAuto(Car newauto, Integer index) {
         if (salary > newauto.value) {
-            this.auto = newauto;
+            this.garage[index] = newauto;
             System.out.println("Nice you got yourself a car");
         } else if (salary > newauto.value / 12) {
-            this.auto = newauto;
+            this.garage[index] = newauto;
             System.out.println("You need a credit but you can have it");
         } else System.out.println("Dude go to school, get a raise or change job idk");
     }
 
     public String toString() {
-        return firstName + " " + lastName + " " + pet + " " + auto + " " + tel;
+        return firstName + " " + lastName + " " + pet + " " + garage[0] + " " + tel;
     }
 }
