@@ -2,6 +2,7 @@ package company;
 
 import company.creatures.Human;
 import company.devices.Diesel;
+import company.devices.Transaction;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,6 +17,23 @@ public class Main {
         Diesel autoSeven = new Diesel("Fabia", "Skoda", 2008, 220.0);
         Diesel autoEight = new Diesel("Vectra", "Opel", 2003, 220.0);
         Diesel autoNine = new Diesel("Corsa", "Opel", 1998, 220.0);
+
+        Human ownerOne = new Human("homo sapiens sapiens", 3);
+        ownerOne.firstName = "Zdzisiu";
+        Human ownerTwo = new Human("homo sapiens sapiens", 3);
+        ownerTwo.firstName = "Mieciu";
+        Human ownerThree = new Human("homo sapiens sapiens", 3);
+        ownerThree.firstName = "Heniu";
+
+        Transaction tOne = new Transaction(ownerOne, ownerTwo, 300.0, "26.06.2007");
+        Transaction tTwo = new Transaction(ownerTwo, ownerThree, 200.0, "12.03.2008");
+        Transaction tThree = new Transaction(ownerThree, me, 180.0, "02.02.2010");
+
+
+        autoOne.listOfTransactions.add(tOne);
+        autoOne.listOfTransactions.add(tTwo);
+        autoOne.listOfTransactions.add(tThree);
+
 
         me.setSalary(999999.0);
         me.setAuto(autoOne, 0);
@@ -42,7 +60,7 @@ public class Main {
         System.out.println(buyer.getAuto(2));
         System.out.println("---------------------");
         try {
-            autoTwo.sell(me, buyer, 234.0);
+            autoOne.sell(me, buyer, 234.0);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -56,5 +74,12 @@ public class Main {
         System.out.println(buyer.getAuto(1));
         System.out.println(buyer.getAuto(2));
 
+        for (int i = 0; i < autoOne.listOfTransactions.size(); i++) {
+            System.out.println(autoOne.listOfTransactions.get(i));
+        }
+
+        System.out.println(autoOne.wasOwner(me));
+        System.out.println(autoOne.wasSoldAB(buyer, me));
+        System.out.println(autoOne.numberOfTransactions());
     }
 }
