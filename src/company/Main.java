@@ -1,81 +1,60 @@
 package company;
 
 import company.creatures.Human;
-import company.creatures.Pet;
 import company.devices.Diesel;
-import company.devices.Phone;
 
 public class Main {
     public static void main(String[] args) {
-        Pet dog = new Pet("dog");
-        dog.name = "Pieseł";
 
-        dog.feed();
-        dog.feed(5.0);
-        dog.takeForAWalk();
+        Human me = new Human("homo sapiens sapiens", 3);
+        Diesel autoOne = new Diesel("Golf", "VW", 2006, 220.0);
+        Diesel autoTwo = new Diesel("A4", "Audi", 2010, 120.0);
+        Diesel autoThree = new Diesel("Polo", "VW", 2005, 320.0);
+        Diesel autoFour = new Diesel("Laguna", "Renault", 2006, 220.0);
+        Diesel autoFive = new Diesel("Golf", "VW", 2012, 220.0);
+        Diesel autoSix = new Diesel("A3", "Audi", 2013, 220.0);
+        Diesel autoSeven = new Diesel("Fabia", "Skoda", 2008, 220.0);
+        Diesel autoEight = new Diesel("Vectra", "Opel", 2003, 220.0);
+        Diesel autoNine = new Diesel("Corsa", "Opel", 1998, 220.0);
 
-        Diesel fourWheel = new Diesel("VW", "Golf", 2006);
-        fourWheel.value = 300.0;
+        me.setSalary(999999.0);
+        me.setAuto(autoOne, 0);
+        me.setAuto(autoTwo, 2);
+        me.setAuto(autoThree, 1);
+        me.sortGarage();
+        me.firstName = "Patryk";
+        me.cash = 100.0;
 
-        Phone myPhone = new Phone("Xiaomi", "Redmi Note 4", 2016, 5.5, true);
+        Human buyer = new Human("homo sapiens sapiens", 3);
+        buyer.setSalary(999999.0);
+        buyer.firstName = "Benek";
+        buyer.cash = 10000.0;
+        buyer.setAuto(autoEight, 0);
+        buyer.setAuto(autoFive, 2);
 
-        Human man = new Human("Homo sapiens sapiens", 3);
-        man.firstName = "Pan";
-        man.lastName = "Panicz";
-        man.pet = dog;
-        man.tel = myPhone;
-        man.cash = 100000.0;
-
-        Human buyer = new Human("Homo sapiens sapiens", 4);
-        buyer.firstName = "Ewelina";
-        buyer.lastName = "Sprzedawca";
-        buyer.tel = myPhone;
-        buyer.cash = 2000.0;
-
+        System.out.println("---------------------");
+        System.out.println(me.getAuto(0));
+        System.out.println(me.getAuto(1));
+        System.out.println(me.getAuto(2));
+        System.out.println("---------------------");
+        System.out.println(buyer.getAuto(0));
+        System.out.println(buyer.getAuto(1));
+        System.out.println(buyer.getAuto(2));
+        System.out.println("---------------------");
         try {
-            man.pet.sell(man, buyer, 500.0);
+            autoTwo.sell(me, buyer, 234.0);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        try {
-            man.pet.sell(man, buyer, 500.0);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        System.out.println(man.pet);
-        man.setSalary(30000.0);
-        man.setAuto(fourWheel, 0);
-
-        Diesel fiveWheel = new Diesel("VW", "Golf", 2006);
-        fiveWheel.value = 700.0;
-
-        man.setAuto(fiveWheel, 1);
-        Double garageValue = man.getGarageValue(2);
-        System.out.println(garageValue);
-
-        myPhone.installApp("headbook", "1.2.30");
-        myPhone.installApp("headbook", "1.23.41", "appStore.com/headbook");
-        //System.out.println(fiveWheel);
-        /*
-        System.out.println(fourWheel.equals(fiveWheel));
-        System.out.println(fourWheel);
-        System.out.println(fiveWheel);
-        System.out.println(dog);
-        System.out.println(myPhone);
-        System.out.println(man);
-
-        man.getSalary();
-        man.setSalary(300.0);
-        man.getSalary();
-        man.getSalary();
-
-        Scanner sc = new Scanner(System.in);
-        int i = sc.nextInt();
-
-        System.out.println(" new number: " + i);
-        */
+        System.out.println(buyer.cash);
+        System.out.println(me.cash);
+        System.out.println(me.getAuto(0));
+        System.out.println(me.getAuto(1));
+        System.out.println(me.getAuto(2));
+        System.out.println("---------------------");
+        System.out.println(buyer.getAuto(0));
+        System.out.println(buyer.getAuto(1));
+        System.out.println(buyer.getAuto(2));
 
     }
-
 }

@@ -8,8 +8,8 @@ public class Phone extends Device {
     final public Double screenSize;
     final public Boolean android;
 
-    public Phone(String producer, String model, Integer yearOfProduction, Double screenSize, Boolean android) {
-        super(producer, model, yearOfProduction);
+    public Phone(String producer, String model, Integer yearOfProduction, Double value, Double screenSize, Boolean android) {
+        super(producer, model, yearOfProduction, value);
         this.screenSize = screenSize;
         this.android = android;
     }
@@ -20,6 +20,11 @@ public class Phone extends Device {
 
     @Override
     public void turnOn() {
+    }
+
+    @Override///DLA SPOKOJU
+    public int compareTo(Car o) {
+        return 0;
     }
 
     @Override
