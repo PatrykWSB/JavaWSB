@@ -31,7 +31,7 @@ public abstract class Car extends Device implements Comparable {
         seller.cash += price;
         buyer.buyCar(this);
         seller.sellCar(this);
-        this.listOfTransactions.add(new Transaction(seller, buyer, price, "26.05.2020"));
+        this.listOfTransactions.add(new Transaction(seller, buyer, price, "26.05.2020"));///NIE CHCIALO MI SIE WSTAWIAC DATY
         System.out.println("Pan/i " + buyer.firstName + " kupił od Pana/i " + seller.firstName + " " + buyer.pet.name + " za kwotę " + price);
     }
 
